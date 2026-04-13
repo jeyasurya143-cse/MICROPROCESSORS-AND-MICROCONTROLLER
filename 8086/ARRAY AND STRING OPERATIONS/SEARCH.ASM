@@ -1,0 +1,33 @@
+//search an element
+
+        OUTPUT 2500AD
+.ORG 2000H
+DATA SEGMENT
+ARRAY DW 0000H,0003H,0005H,0001H,0010H
+COUNT EQU 0005H
+RESULT DW 0000H
+KEY DW 0003H
+DATA ENDS
+CODE SEGMENT
+        ASSUME CS:CODE,DS:DATA
+START:
+        MOV AX,DATA
+        MOV DS,AX
+        MOV SI,OFFSET ARRAY
+        MOV AX,KEY
+        MOV CL,COUNT
+L2:
+        CMP AX,[SI]
+        JZ L1
+        INC SI
+        INC SI
+        DEC CL
+        JNZ L2
+        JMP L3
+L1:
+        INC RESULT
+        MOV AX,RESULT
+L3:
+        HLT
+CODE ENDS
+END
