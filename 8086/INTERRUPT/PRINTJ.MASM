@@ -1,0 +1,19 @@
+// Print J BASED ON THE NUMBER OF COUNT 
+
+CODE SEGMENT
+        ASSUME CS:CODE
+START:
+        MOV AH,02H
+        MOV BH,00H
+        MOV DH,03H
+        MOV DL,02H
+        INT 10H
+        MOV AH,0AH
+        MOV AL,'J'
+        MOV DH,02H
+        MOV CX,0002H
+        INT 10H
+        MOV AH,4CH
+        INT 21H
+CODE ENDS
+END
