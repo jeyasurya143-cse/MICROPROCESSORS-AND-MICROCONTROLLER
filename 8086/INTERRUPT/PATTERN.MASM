@@ -1,0 +1,62 @@
+/// Pattern
+      $
+    $ $ $
+      $
+    $   $
+
+
+CODE SEGMENT
+        ASSUME CS:CODE
+START:
+        MOV DL,' '
+        MOV AH,02H
+        INT 21H
+        MOV DL,'$'
+        INT 21H
+        MOV DL,' '
+        INT 21H
+        MOV DL,0DH
+        INT 21H
+        MOV DL,0AH
+        INT 21H
+        MOV CX,3
+L1:
+        MOV DL,'$'
+        MOV AH,02H
+        INT 21H
+        LOOP L1
+        MOV DL,0DH
+        INT 21H
+        MOV DL,0AH
+        INT 21H
+        MOV DL,' '
+        MOV AH,02H
+        INT 21H
+        MOV DL,'$'
+        INT 21H
+        MOV DL,' '
+        INT 21H
+        MOV DL,0DH
+        INT 21H
+        MOV DL,0AH
+        INT 21H
+        MOV DL,' '
+        MOV AH,02H
+        INT 21H
+        MOV DL,'$'
+        INT 21H
+        MOV DL,0DH
+        INT 21H
+        MOV DL,0AH
+        INT 21H
+        MOV DL,'$'
+        MOV AH,02H
+        INT 21H
+        MOV DL,' '
+        INT 21H
+        MOV DL,'$'
+        INT 21H
+        MOV AH,4CH
+        INT 21H
+CODE ENDS
+END START
